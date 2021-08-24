@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="src/controller.js" type="module"></script>
+
+    <title>accel.</title>
+  </head>
+  <body>
+    <form id="new-piece-form">
+      <label for="composer">Composer</label>
+      <input list="composer-list" type="text" id="composer" />
+      <datalist id="composer-list">
+        <option value="Bach"></option>
+        <option value="Beethoven"></option>
+        <option value="Mahler"></option>
+      </datalist>
+      <label for="piece">Name of Piece</label>
+      <input type="text" list="piece-list" id="piece" />
+      <datalist id="piece-list">
+        <option value="Symphony"></option>
+      </datalist>
+      <label for="measure-numbers">Measures</label>
+      <input id="measure-numbers" type="text" placeholder="7-8" />
+      <label for="excerpt-description">Excerpt Description</label>
+      <input
+        type="text"
+        id="excerpt-description"
+        placeholder="Minor arpeggios in development"
+      />
+      <label for="starting-tempo">Starting Tempo</label>
+      <input id="starting-tempo" type="number" value="60" min="30" max="220" />
+      <label for="goal-tempo">Goal Tempo</label>
+      <input id="goal-tempo" type="number" value="120" min="30" max="220" />
+
+      <label for="repetitions">Repetitions per level</label>
+      <input id="repetitions" type="number" value="3" min="1" max="6" />
+
+      <label for="tempo-increase">Tempo Increase per Level</label>
+      <input id="tempo-increase" type="number" value="4" min="1" max="10" />
+
+      <button id="new-piece-btn" type="submit">Practice</button>
+    </form>
+
+    <form id="next-level-form">
+      <label for="repetition">Click After Each Repetition:</label>
+      <input
+        type="checkbox"
+        class="input__checkbox--repetition"
+        name="repetition"
+        id="repetition"
+      />
+      <button type="submit" id="btn__next-level">Next Level</button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "accelproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/style.scss css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcloeter/accelApp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jcloeter/accelApp/issues"
+  },
+  "homepage": "https://github.com/jcloeter/accelApp#readme",
+  "dependencies": {
+    "node-sass": "^6.0.1",
+    "parcel": "^2.0.0-rc.0"
+  }
+}
