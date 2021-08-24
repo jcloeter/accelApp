@@ -29,7 +29,6 @@ export const setPracticeData = function (e) {
       progressPercent: +0,
     },
   };
-  // state.practiceList.push(newPiece);
 };
 
 const setTotalLevels = function (start, end, inc) {

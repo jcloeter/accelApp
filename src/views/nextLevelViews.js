@@ -1,13 +1,47 @@
 class nextLevelView {
-  //   _nextLvlBtn = document.querySelector(".btn__next-level");
-  _nextLvlBtn = document.getElementById("btn__next-level");
+  _nextLvlBtn = document.querySelector(".btn__next-level");
+  //   _nextLvlBtn = document.getElementById("btn__next-level");
+  _parent = document.getElementById("next-level-form");
 
   addHandlerNextLevel = function (callback) {
-    this._nextLvlBtn.addEventListener("click", function (e) {
+    this._parent.addEventListener("click", function (e) {
       e.preventDefault();
+      const btn = e.target.closest(".btn__next-level");
+      if (!btn) return;
       callback();
     });
+  };
+
+  _generateMarkup = function (prObj) {
+    const reps = prObj.repetitionsPerLevel;
+    // this._generateCheckboxes(3);
+    const markup = `
+      <label for="repetition">Click After Each Repetition:</label>
+      ${this._generateCheckboxes(reps)}
+      <button type="submit" class="btn__next-level" id="btn__next-level">Next Level</button>
+      `;
+    this._parent.insertAdjacentHTML("afterbegin", markup);
+  };
+
+  _generateCheckboxes = function (reps) {
+    let boxes = ``;
+    for (let x = 0; x < reps; x++) {
+      boxes += `<input
+        type="checkbox"
+        class="input__checkbox--repetition"
+        name="repetition"
+        /> `;
+    }
+    return boxes;
   };
 }
 
 export default new nextLevelView();
+
+{
+  /* <input
+type="checkbox"
+class="input__checkbox--repetition"
+name="repetition"
+/> */
+}
