@@ -4,11 +4,24 @@ class nextLevelView {
   _parent = document.getElementById("next-level-form");
 
   addHandlerNextLevel = function (callback) {
+    const that = this;
     this._parent.addEventListener("click", function (e) {
-      e.preventDefault();
+      //1) Checking if click occured on the button, if not, return
       const btn = e.target.closest(".btn__next-level");
       if (!btn) return;
+
+      //2)Checking if all checkboxes are checked, if not all checkboxes are checked, we still want to prevDef or section will refesh
+      const boxes = Array.from(that._parent.getElementsByTagName("input"));
+      e.preventDefault();
+      if (!boxes.every((b) => b.checked)) return;
+
+      //3)If btn was clicked AND all checkboxes are checked, call function
       callback();
+
+      //4) Finally, remove checks from boxes
+      boxes.forEach((b) => {
+        b.checked = false;
+      });
     });
   };
 
@@ -37,11 +50,3 @@ class nextLevelView {
 }
 
 export default new nextLevelView();
-
-{
-  /* <input
-type="checkbox"
-class="input__checkbox--repetition"
-name="repetition"
-/> */
-}

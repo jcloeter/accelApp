@@ -12,24 +12,30 @@
   <body>
     <form id="new-piece-form">
       <label for="composer">Composer</label>
-      <input list="composer-list" type="text" id="composer" />
-      <datalist id="composer-list">
+      <input list="composer-list" type="text" value="Mahler" id="composer" />
+      <datalist id="composer-datalist">
         <option value="Bach"></option>
         <option value="Beethoven"></option>
         <option value="Mahler"></option>
       </datalist>
       <label for="piece">Name of Piece</label>
-      <input type="text" list="piece-list" id="piece" />
-      <datalist id="piece-list">
+      <input type="text" list="piece-list" id="piece" value="Symphony 1" />
+      <datalist id="piece-datalist">
         <option value="Symphony"></option>
       </datalist>
       <label for="measure-numbers">Measures</label>
-      <input id="measure-numbers" type="text" placeholder="7-8" />
+      <input
+        id="measure-numbers"
+        type="text"
+        placeholder="7-8"
+        value="103-107"
+      />
       <label for="excerpt-description">Excerpt Description</label>
       <input
         type="text"
         id="excerpt-description"
         placeholder="Minor arpeggios in development"
+        value="Minor arpeggios in development"
       />
       <label for="starting-tempo">Starting Tempo</label>
       <input id="starting-tempo" type="number" value="60" min="30" max="220" />
@@ -42,8 +48,23 @@
       <label for="tempo-increase">Tempo Increase per Level</label>
       <input id="tempo-increase" type="number" value="4" min="1" max="10" />
 
-      <button id="new-piece-btn" type="submit">Practice</button>
+      <button id="new-piece-btn" type="submit">Create</button>
     </form>
+
+    <section class="pieces">
+      <ul class="pieces__list">
+        <!-- <li class="pieces__item">
+          <div class="pieces__item-description">
+            <h4>Symphony 3 by Beethoven</h4>
+            <p>B-flat Arpeggios in mv4, mm. 200-205</p>
+          </div>
+          <div class="pieces__item-progress">
+            <p>Lvl 3/18</p>
+            <p>80 bpm, Target is 144 bpm</p>
+          </div>
+        </li> -->
+      </ul>
+    </section>
 
     <form id="next-level-form">
       <!-- <label for="repetition">Click After Each Repetition:</label>
