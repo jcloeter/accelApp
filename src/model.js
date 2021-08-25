@@ -18,7 +18,7 @@ export const setPracticeData = function (e) {
     goalTempo: +inputObj["goal-tempo"],
     repetitionsPerLevel: +inputObj["repetitions"],
     tempoIncreasePerLevel: +inputObj["tempo-increase"],
-    excerptId: Date.now(),
+    excerptId: +Date.now(),
     progress: {
       currTempo: +inputObj["starting-tempo"],
       totalLevels: +setTotalLevels(
@@ -64,4 +64,10 @@ export const incNextLevel = function (pcObj) {
     progHistory: progHis,
   };
   console.log(state.practiceList[0].progress);
+};
+
+export const findPieceUsingId = function (id) {
+  return state.practiceList.find((list) => {
+    return list.excerptId === id;
+  });
 };

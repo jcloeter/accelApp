@@ -16,7 +16,16 @@ const controlNewPiece = function (e) {
   // nextLevelViews._generateMarkup(model.state.practiceList[0]);
 };
 
-const controlPracticeMode = function () {};
+const controlPracticeMode = function (id) {
+  //1) Clears list of pieces from UI
+  piecesViews.clearPiecesList();
+
+  //2) Find piece that hash was changed to:
+  const prPiece = model.findPieceUsingId(id);
+
+  //3) Generate checkboxes specific to curr Practice piece:
+  nextLevelViews._generateMarkup(prPiece);
+};
 
 const controlNextLevel = function () {
   model.incNextLevel(model.state.practiceList[0]);
@@ -24,7 +33,7 @@ const controlNextLevel = function () {
 
 const init = function () {
   formViews.addHandlerFormSubmit(controlNewPiece);
-  piecesViews.addHandlerHash();
+  piecesViews.addHandlerHash(controlPracticeMode);
   //Add listener to parent element and use event delegation:
   nextLevelViews.addHandlerNextLevel(controlNextLevel);
 };

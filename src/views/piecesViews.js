@@ -7,13 +7,14 @@ class Pieces {
     this._data = data;
 
     //To only add on most recent piece and keep additions:
-    this._generateMarkup(data[data.length - 1]);
+    //this._generateMarkup(data[data.length - 1]);
 
     //To generate entire list, do this:
-    // this._ulElement.innerHTML = "";
-    // data.forEach((pc) => this._generateMarkup(pc));
+    this._ulElement.innerHTML = "";
+    data.forEach((pc) => this._generateMarkup(pc));
   };
 
+  //Adds newest piece to list of pieces
   _generateMarkup = function (pc) {
     console.log(pc);
     const markup = `
@@ -36,7 +37,8 @@ class Pieces {
     this._ulElement.insertAdjacentHTML("afterbegin", markup);
   };
 
-  addHandlerHash = function () {
+  //Listens for a piece to be clicked on, called practiceController
+  addHandlerHash = function (callback) {
     this._ulElement.addEventListener("click", function (e) {
       const li = e.target.closest(".pieces__item");
       if (!li) return;
@@ -48,7 +50,15 @@ class Pieces {
       console.log(
         "HASH- you will be redirected to id " + e.newURL.split("#")[1]
       );
+      const id = +e.newURL.split("#")[1];
+      callback(id);
     });
+  };
+
+  //Clears piecesView list from screen:
+  clearPiecesList = function () {
+    console.log("clear was called");
+    this._parent.innerHTML = "";
   };
 }
 
