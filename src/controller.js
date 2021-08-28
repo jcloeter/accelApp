@@ -9,13 +9,12 @@ import navigationViews from "/src/views/navigationViews.js";
 const controlNewPiece = function (e) {
   //1) Add new piece information to practiceList
   model.state.practiceList.push(model.setPracticeData(e));
-  console.log(model.state);
+
+  //Adding new adjusted state to localStorage
+  model.setLocalStorage(model.state);
 
   //2)Passing in only the practiceList to make a new pc on UI
   piecesViews.updateUI(model.state.practiceList);
-
-  //3) Generate Markup for checkboxes/nextLevel btn
-  // nextLevelViews._generateMarkup(model.state.practiceList[0]);
 };
 
 const controlPracticeMode = function (id) {
@@ -24,9 +23,11 @@ const controlPracticeMode = function (id) {
 
   //2) Find piece that hash was changed to and CHANGE CURRENT PIECE STATE HERE
   const prPiece = model.findPieceUsingId(id);
-  if (!prPiece) console.log("couldnt find hash location😩😩😩");
   model.state.currentPiece = prPiece;
   // console.log(model.state);
+
+  //2.5) Adding adjusted state to localStorage
+  model.setLocalStorage(model.state);
 
   //3) Render prPiece to screen:
   practiceViews.renderPracticePage(prPiece);
@@ -41,11 +42,10 @@ const controlPracticeMode = function (id) {
 const controlNextLevel = function (prObj) {
   model.incNextLevel(prObj);
   nextLevelViews.update();
+  practiceViews.updatePracticePage(prObj);
 };
 
 const controlNavigationToHome = function () {
-  console.log(`We're home 😩🍑🙌🏿`);
-
   //Clear Practice Info:
   practiceViews.clear();
 
@@ -53,7 +53,13 @@ const controlNavigationToHome = function () {
   piecesViews.updateUI(model.state.practiceList);
 };
 
+const controlInitialPage = function () {
+  //This updates UI so localStorage may be rendered:
+  piecesViews.updateUI(model.state.practiceList);
+};
+
 const init = function () {
+  controlInitialPage();
   navigationViews.addHandlerInitHash();
   formViews.addHandlerFormSubmit(controlNewPiece);
   piecesViews.addHandlerHash(controlPracticeMode, controlNavigationToHome);

@@ -14,10 +14,17 @@ class Practice {
     this._prHistory.innerHTML = "";
   };
 
+  //This is called initially to render the pr Page
   renderPracticePage = function (pc) {
     this._prPiece = pc;
     this._generatePracticePieceMarkup(pc);
     this._generateInitialRepetitionsMarkup();
+  };
+
+  //Called after each level to update piece summary
+  updatePracticePage = function (pc) {
+    this._prInformation.innerHTML = "";
+    this._generatePracticePieceMarkup(pc);
   };
 
   //Passing in pc from renderPracticePage instead of class var bc lazy:
@@ -37,7 +44,9 @@ class Practice {
         }/${pc.progress.totalLevels}</div>
         <div class="practice__pc--progress-tempo">${
           pc.progress.currTempo
-        } bpm, Goal of ${pc.goalTempo}  bpm</div>
+        } bpm, Goal of ${pc.goalTempo}  bpm. ${
+      pc.progress.progressPercent
+    }%</div>
       </div>
     `;
     this._prInformation.insertAdjacentHTML("afterbegin", markup);

@@ -5,7 +5,6 @@ class Navigation {
     window.addEventListener("load", function () {
       if (!window.location.href.includes("#")) return;
       const baseUrl = window.location.href.split("#")[0];
-      console.log(baseUrl);
       window.location.replace(baseUrl);
     });
   }

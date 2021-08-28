@@ -90,3 +90,30 @@ const formatDate = function () {
   // console.log(date.toLocaleString("en-US", options));
   return date.toLocaleString("en-US", options);
 };
+
+export const setLocalStorage = function (obj) {
+  obj.practiceList.forEach((pc) => {
+    console.log(pc);
+    window.localStorage.setItem(pc.excerptId, JSON.stringify(pc));
+  });
+  const get = JSON.parse(window.localStorage.getItem("stateStorage"));
+  // console.log(get);
+  console.log(window.localStorage);
+};
+
+export const getLocalStorage = function () {
+  for (const [id, pc] of Object.entries(window.localStorage)) {
+    // state.practiceList.push(JSON.parse(window.localStorage.getItem(pc)));
+    state.practiceList.push(JSON.parse(pc));
+    console.log(JSON.parse(pc));
+  }
+  console.log(state);
+};
+
+getLocalStorage();
+
+export const clearLocalStorage = function () {
+  window.localStorage.clear();
+};
+
+clearLocalStorage();

@@ -48,19 +48,9 @@ class nextLevelView {
 
     //Slice off first init level, we wont display it
     const arrLvlAfterOne = this._prObj.progress.progHistory.slice(1);
-    console.log(arrLvlAfterOne);
-    // const startTempo = this._prObj.progress.currTempo;
-    // console.log(startTempo);
 
     let markup = arrLvlAfterOne
       .map((lvl, i) => {
-        console.log(`Array we are looping over is ${arrLvlAfterOne}`);
-        console.log(`i equals ${i}`);
-        console.log(lvl);
-        // console.log(this._prObj.progress.currTempo);
-        // console.log(startTempo);
-
-        // if (lvl[0] === 0) return "";
         return `<p class="practice__progress--history-summary"> ✅ Level ${
           lvl.lvl
         }: ${this._prObj.repetitionsPerLevel} ${
@@ -71,33 +61,9 @@ class nextLevelView {
       })
       .reverse()
       .join("");
-    console.log(markup);
 
     this._prProgressHistory.insertAdjacentHTML("afterbegin", markup);
   };
-
-  // _generateInitialRepetitionsMarkup = function () {
-  //   const reps = this._prObj.repetitionsPerLevel;
-  //   // this._generateCheckboxes(3);
-  //   const markup = `
-  //     <label for="repetition">Click After Each Repetition:</label>
-  //     ${this._generateCheckboxes(reps)}
-  //     <button type="submit" class="btn__next-level" id="btn__next-level">Next Level</button>
-  //     `;
-  //   this._parent.insertAdjacentHTML("afterbegin", markup);
-  // };
-
-  // _generateCheckboxes = function (reps) {
-  //   let boxes = ``;
-  //   for (let x = 0; x < reps; x++) {
-  //     boxes += `<input
-  //       type="checkbox"
-  //       class="input__checkbox--repetition"
-  //       name="repetition"
-  //       /> `;
-  //   }
-  //   return boxes;
-  // };
 }
 
 export default new nextLevelView();

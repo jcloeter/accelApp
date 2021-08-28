@@ -6,11 +6,6 @@ class Pieces {
   updateUI = function (data) {
     this._data = data;
 
-    //To only add on most recent piece and keep additions:
-    //this._generateMarkup(data[data.length - 1]);
-
-    console.log("updating UI 1 sec");
-    console.log(this._data);
     //To generate entire list, do this:
     this._ulElement.innerHTML = "";
     data.forEach((pc) => this._generateMarkup(pc));
@@ -34,7 +29,6 @@ class Pieces {
             </div>
         </li>
       `;
-    console.log(this._ulElement);
     this._ulElement.insertAdjacentHTML("afterbegin", markup);
   };
 
@@ -49,7 +43,6 @@ class Pieces {
     window.addEventListener("hashchange", function (e) {
       //if the new url doesnt contain a hash, it means were going to the home page
       if (!e.newURL.includes("#")) return toHome();
-      console.log("was the hash change squashed?");
 
       //If !id, means user went back to home page
       const id = +e.newURL.split("#")[1];
