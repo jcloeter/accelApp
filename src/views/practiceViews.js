@@ -2,8 +2,17 @@ class Practice {
   _parentEl = document.querySelector(".practice");
   _prInformation = document.querySelector(".practice__pc--information");
   _form = document.getElementById("next-level-form");
+  _prHistory = document.querySelector(".practice__progress--history");
 
   _prPiece;
+
+  clear = function () {
+    //Ex for future projects: clearing the parent el also messes with the scaffolding that we will later need to reinsert html into later:
+    // this._parentEl.innerHTML = "";
+    this._prInformation.innerHTML = "";
+    this._form.innerHTML = "";
+    this._prHistory.innerHTML = "";
+  };
 
   renderPracticePage = function (pc) {
     this._prPiece = pc;

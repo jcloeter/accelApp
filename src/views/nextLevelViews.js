@@ -4,6 +4,8 @@ class nextLevelView {
   _nextLvlBtn;
   _prObj;
   _parent = document.getElementById("next-level-form");
+
+  //We have a duplicate of _prPorgressHistory, could cause problems later. This class should be a child of practiceViews
   _prProgressHistory = document.querySelector(".practice__progress--history");
 
   addHandlerNextLevel = function (callback) {
@@ -67,6 +69,7 @@ class nextLevelView {
       <p class="practice__progress--history-date"><small>${lvl.date}</small></p>
        `;
       })
+      .reverse()
       .join("");
     console.log(markup);
 

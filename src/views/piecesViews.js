@@ -9,6 +9,8 @@ class Pieces {
     //To only add on most recent piece and keep additions:
     //this._generateMarkup(data[data.length - 1]);
 
+    console.log("updating UI 1 sec");
+    console.log(this._data);
     //To generate entire list, do this:
     this._ulElement.innerHTML = "";
     data.forEach((pc) => this._generateMarkup(pc));
@@ -32,12 +34,12 @@ class Pieces {
             </div>
         </li>
       `;
-
+    console.log(this._ulElement);
     this._ulElement.insertAdjacentHTML("afterbegin", markup);
   };
 
   //Listens for a piece to be clicked on, called practiceController
-  addHandlerHash = function (callback) {
+  addHandlerHash = function (callback, toHome) {
     this._ulElement.addEventListener("click", function (e) {
       const li = e.target.closest(".pieces__item");
       if (!li) return;
@@ -45,10 +47,11 @@ class Pieces {
     });
 
     window.addEventListener("hashchange", function (e) {
-      // console.log(e.newURL.split("#"));
-      // console.log(
-      //   "HASH- you will be redirected to id " + e.newURL.split("#")[1]
-      // );
+      //if the new url doesnt contain a hash, it means were going to the home page
+      if (!e.newURL.includes("#")) return toHome();
+      console.log("was the hash change squashed?");
+
+      //If !id, means user went back to home page
       const id = +e.newURL.split("#")[1];
       callback(id);
     });
@@ -56,7 +59,7 @@ class Pieces {
 
   //Clears piecesView list from screen:
   clearPiecesList = function () {
-    this._parent.innerHTML = "";
+    this._ulElement.innerHTML = "";
   };
 }
 
