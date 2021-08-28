@@ -43,7 +43,7 @@
       <input id="goal-tempo" type="number" value="120" min="30" max="220" />
 
       <label for="repetitions">Repetitions per level</label>
-      <input id="repetitions" type="number" value="3" min="1" max="6" />
+      <input id="repetitions" type="number" value="1" min="1" max="6" />
 
       <label for="tempo-increase">Tempo Increase per Level</label>
       <input id="tempo-increase" type="number" value="4" min="1" max="10" />
@@ -66,15 +66,46 @@
       </ul>
     </section>
 
-    <form id="next-level-form">
-      <!-- <label for="repetition">Click After Each Repetition:</label>
-      <input
-        type="checkbox"
-        class="input__checkbox--repetition"
-        name="repetition"
-        id="repetition"
-      />
-      <button type="submit" id="btn__next-level">Next Level</button> -->
-    </form>
+    <section class="practice">
+      <div class="practice__pc--information">
+        <!-- <div class="practice__pc--title">
+          <h3 class="practice__pc--title-main">Concerto for Trumpet</h3>
+          <h4 class="practice__pc--title-sub">by Hummel</h4>
+        </div>
+        <div class="practice__pc--progress">
+          <div class="practice__pc--progress-level">Level 1 of 15</div>
+          <div class="practice__pc--progress-tempo">Tempo 62 of 124</div>
+        </div> -->
+      </div>
+      <form id="next-level-form">
+        <!-- <label for="repetition">Click After Each Repetition:</label>
+        <input
+          type="checkbox"
+          class="input__checkbox--repetition"
+          name="repetition"
+          id="repetition"
+        />
+        <button type="submit" id="btn__next-level">Next Level</button> -->
+      </form>
+
+      <div class="practice__progress--history">
+        <!-- <p class="practice__progress--history-summary"> ✅ Level 2: Three repetitions at 66bpm</p>
+        <p class="practice__progress--history-date"><small>Thu Aug 26 2021 10:15 AM</small></p> -->
+      </div>
+
+      <div class="practice__metronome">
+        <!-- <label for="practice__metronome--tempo">BPM</label>
+        <input
+          type="text"
+          id="practice__metronome--tempo"
+          class="practice__metronome--tempo"
+        />
+        <div class="practice__metronome--buttons">
+          <button class="practice__metronome--plus">+</button>
+          <button class="practice__metronome--minus">-</button>
+          <button class="practice__metronome--start-stop">Start/Stop</button> -->
+        </div>
+      </div>
+    </section>
   </body>
 </html>

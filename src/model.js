@@ -1,5 +1,6 @@
 export const state = {
   practiceList: [],
+  currentPiece: "",
 };
 
 //Initializes a new piece
@@ -28,7 +29,10 @@ export const setPracticeData = function (e) {
       ),
       currLevel: +1,
       progressPercent: +0,
-      progHistory: [[0, new Date()]],
+      // progHistory: [[0, new Date()]],
+      progHistory: [
+        { lvl: 0, lvlTempo: +inputObj["starting-tempo"], date: formatDate() },
+      ],
       //progHistory is init at lvl 0, keeps record of time each level was passed
     },
   };
@@ -47,11 +51,13 @@ export const incNextLevel = function (pcObj) {
     totalLevels: lvls,
     progHistory: progHis,
   } = pcObj.progress;
-  console.log(currT, currLvl, progPerc, lvls);
+  // console.log(currT, currLvl, progPerc, lvls);
 
   //Update Progress percent before next level is inc
   progPerc = Math.ceil((currLvl / lvls) * 100);
-  progHis.push([currLvl, new Date()]);
+
+  //ProgHis now contains data about the tempo at the point in history
+  progHis.push({ lvl: currLvl, lvlTempo: currT, date: formatDate() });
   currLvl++;
   currT += pcObj.tempoIncreasePerLevel;
 
@@ -63,11 +69,24 @@ export const incNextLevel = function (pcObj) {
     totalLevels: lvls,
     progHistory: progHis,
   };
-  console.log(state.practiceList[0].progress);
+  console.log(state.practiceList);
 };
 
 export const findPieceUsingId = function (id) {
   return state.practiceList.find((list) => {
     return list.excerptId === id;
   });
+};
+
+const formatDate = function () {
+  const options = {
+    weekday: "short",
+    day: "numeric",
+    month: "short",
+    hour: "numeric",
+    minute: "numeric",
+  };
+  const date = new Date();
+  // console.log(date.toLocaleString("en-US", options));
+  return date.toLocaleString("en-US", options);
 };

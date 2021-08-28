@@ -16,7 +16,6 @@ class Pieces {
 
   //Adds newest piece to list of pieces
   _generateMarkup = function (pc) {
-    console.log(pc);
     const markup = `
         <li class="pieces__item" href=#${pc.excerptId}>
             <div class="pieces__item-description">
@@ -46,10 +45,10 @@ class Pieces {
     });
 
     window.addEventListener("hashchange", function (e) {
-      console.log(e.newURL.split("#"));
-      console.log(
-        "HASH- you will be redirected to id " + e.newURL.split("#")[1]
-      );
+      // console.log(e.newURL.split("#"));
+      // console.log(
+      //   "HASH- you will be redirected to id " + e.newURL.split("#")[1]
+      // );
       const id = +e.newURL.split("#")[1];
       callback(id);
     });
@@ -57,7 +56,6 @@ class Pieces {
 
   //Clears piecesView list from screen:
   clearPiecesList = function () {
-    console.log("clear was called");
     this._parent.innerHTML = "";
   };
 }
