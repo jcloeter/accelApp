@@ -91,29 +91,46 @@ const formatDate = function () {
   return date.toLocaleString("en-US", options);
 };
 
+//Takes in WHOLE state object
 export const setLocalStorage = function (obj) {
   obj.practiceList.forEach((pc) => {
-    console.log(pc);
     window.localStorage.setItem(pc.excerptId, JSON.stringify(pc));
   });
   const get = JSON.parse(window.localStorage.getItem("stateStorage"));
   // console.log(get);
-  console.log(window.localStorage);
+  // console.log(window.localStorage);
 };
 
 export const getLocalStorage = function () {
   for (const [id, pc] of Object.entries(window.localStorage)) {
-    // state.practiceList.push(JSON.parse(window.localStorage.getItem(pc)));
     state.practiceList.push(JSON.parse(pc));
-    console.log(JSON.parse(pc));
+    // console.log(JSON.parse(pc));
   }
-  console.log(state);
+  // console.log(state);
 };
 
-getLocalStorage();
+//To Delete a piece:
+//1) Get id of pc to delete
+//2) Search state and delete from there
+//3) get pc from localStorage and remove
+export const deleteSinglePieceLocalStorage = function (id) {
+  console.log(window.localStorage);
+  window.localStorage.removeItem(id);
+  console.log(window.localStorage);
+};
+
+export const deleteSinglePieceFromState = function (id) {
+  const i = state.practiceList.findIndex((pc) => {
+    return pc.excerptId == id;
+  });
+  if (i === -1) return;
+  console.log(state.practiceList, i);
+  state.practiceList.splice(i, 1);
+  console.log(state.practiceList);
+};
 
 export const clearLocalStorage = function () {
   window.localStorage.clear();
 };
 
-clearLocalStorage();
+// clearLocalStorage();

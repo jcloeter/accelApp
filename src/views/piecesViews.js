@@ -26,6 +26,7 @@ class Pieces {
                 <p>${pc.progress.currTempo} bpm, Goal of ${
       pc.goalTempo
     }  bpm</p>
+    <button class="pieces__itme-delete-btn" type="button">❌</button>
             </div>
         </li>
       `;
@@ -35,6 +36,9 @@ class Pieces {
   //Listens for a piece to be clicked on, called practiceController
   addHandlerHash = function (callback, toHome) {
     this._ulElement.addEventListener("click", function (e) {
+      //Not ideal, but I need to manually catch cases where the btn and not the ul was clicked
+      if (e.target.type === "button") return;
+      console.log("the ul eventListener proceeded");
       const li = e.target.closest(".pieces__item");
       if (!li) return;
       window.location.hash = li.attributes.href.nodeValue;
@@ -47,6 +51,20 @@ class Pieces {
       //If !id, means user went back to home page
       const id = +e.newURL.split("#")[1];
       callback(id);
+    });
+  };
+
+  //This function should be listening for a click on the X, but it bubble up and causes the practice mode to be engaged
+  addHandlerDeletePiece = function (callback) {
+    const deleteBtn = document.querySelectorAll(".pieces__itme-delete-btn");
+
+    deleteBtn.forEach((btn) => {
+      btn.addEventListener("click", function (e) {
+        const dltId = +e.target
+          .closest(".pieces__item")
+          .attributes.href.nodeValue.split("#")[1];
+        return callback(dltId);
+      });
     });
   };
 

@@ -15,6 +15,9 @@ const controlNewPiece = function (e) {
 
   //2)Passing in only the practiceList to make a new pc on UI
   piecesViews.updateUI(model.state.practiceList);
+
+  //3)Re add eventListeners after a new piece is added
+  piecesViews.addHandlerDeletePiece(controlDeletePiece);
 };
 
 const controlPracticeMode = function (id) {
@@ -51,17 +54,38 @@ const controlNavigationToHome = function () {
 
   //Rerender view of our pieces:
   piecesViews.updateUI(model.state.practiceList);
+
+  //Re add listener after navigation, must be done after updateUI or btns wont exist
+  piecesViews.addHandlerDeletePiece(controlDeletePiece);
 };
 
 const controlInitialPage = function () {
+  model.getLocalStorage();
   //This updates UI so localStorage may be rendered:
   piecesViews.updateUI(model.state.practiceList);
+};
+
+const controlDeletePiece = function (id) {
+  //1)Find pc using ud
+
+  //1)Delete id from state
+  model.deleteSinglePieceFromState(id);
+
+  //2)Read the function name c'mon
+  model.deleteSinglePieceLocalStorage(id);
+
+  //3)Rerender piecesView
+  piecesViews.updateUI(model.state.practiceList);
+
+  //4 Re add the event listener for the btns:
+  piecesViews.addHandlerDeletePiece(controlDeletePiece);
 };
 
 const init = function () {
   controlInitialPage();
   navigationViews.addHandlerInitHash();
   formViews.addHandlerFormSubmit(controlNewPiece);
+  piecesViews.addHandlerDeletePiece(controlDeletePiece);
   piecesViews.addHandlerHash(controlPracticeMode, controlNavigationToHome);
   //Add listener to parent element and use event delegation:
   nextLevelViews.addHandlerNextLevel(controlNextLevel);
