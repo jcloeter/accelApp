@@ -18,9 +18,15 @@ const controlNewPiece = function (e) {
 
   //3)Re add eventListeners after a new piece is added
   piecesViews.addHandlerDeletePiece(controlDeletePiece);
+
+  //4)Clear form view!
+  formViews.clear();
 };
 
 const controlPracticeMode = function (id) {
+  //0)Clear Form
+  formViews.clear();
+
   //1) Clears list of pieces from UI
   piecesViews.clearPiecesList();
 
@@ -81,9 +87,16 @@ const controlDeletePiece = function (id) {
   piecesViews.addHandlerDeletePiece(controlDeletePiece);
 };
 
+const controlShowForm = function () {
+  formViews.clear();
+  formViews.showForm();
+};
+
 const init = function () {
   controlInitialPage();
   navigationViews.addHandlerInitHash();
+  formViews.addHandlerShowForm();
+  formViews.addHandlerLetsPractice();
   formViews.addHandlerFormSubmit(controlNewPiece);
   piecesViews.addHandlerDeletePiece(controlDeletePiece);
   piecesViews.addHandlerHash(controlPracticeMode, controlNavigationToHome);

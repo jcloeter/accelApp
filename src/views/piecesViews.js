@@ -6,6 +6,11 @@ class Pieces {
   updateUI = function (data) {
     this._data = data;
 
+    //If there arent any pieces, tell user how to add!
+    if (!data[0])
+      return (this._ulElement.innerHTML =
+        "<p>No pieces yet, click ➕ to add</p>");
+
     //To generate entire list, do this:
     this._ulElement.innerHTML = "";
     data.forEach((pc) => this._generateMarkup(pc));
@@ -45,7 +50,11 @@ class Pieces {
     });
 
     window.addEventListener("hashchange", function (e) {
+      //We want to allow internal links, not an idea way though
+      if (e.newURL.includes("#pieces")) return;
+
       //if the new url doesnt contain a hash, it means were going to the home page
+
       if (!e.newURL.includes("#")) return toHome();
 
       //If !id, means user went back to home page

@@ -10,8 +10,18 @@
     <title>accel.</title>
   </head>
   <body>
+    <section class="header">
+      <h3>accel</h3>
+      <p>"10 minutes of slow practice equals an hour at a tempo faster than you can process"</p>
+      <h4>Bud Herseth, Former Principal Trumpet, Chicago Symphony Orchestra</h4>
+      <button id="add-new-piece" type="button">➕ Add New Piece </button>
+      <a id="lets-practice-btn" href="#pieces">
+        <button> ⬇ Let's Practice</button>
+      </a>
+    </section>
+
     <form id="new-piece-form">
-      <label for="composer">Composer</label>
+      <!-- <label for="composer">Composer</label>
       <input list="composer-list" type="text" value="Mahler" id="composer" />
       <datalist id="composer-datalist">
         <option value="Bach"></option>
@@ -48,10 +58,11 @@
       <label for="tempo-increase">Tempo Increase per Level</label>
       <input id="tempo-increase" type="number" value="4" min="1" max="10" />
 
-      <button id="new-piece-btn" type="submit">Create</button>
+      <button id="new-piece-btn" type="submit">Create</button> -->
     </form>
 
-    <section class="pieces">
+    <section class="pieces" id="pieces">
+
       <ul class="pieces__list">
         <!-- <li class="pieces__item">
           <div class="pieces__item-description">
@@ -66,7 +77,7 @@
       </ul>
     </section>
 
-    <section class="practice">
+    <section class="practice" id="practice">
       <div class="practice__pc--information">
         <!-- <div class="practice__pc--title">
           <h3 class="practice__pc--title-main">Concerto for Trumpet</h3>
