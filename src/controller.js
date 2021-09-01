@@ -77,7 +77,7 @@ const controlInitialPage = function () {
   piecesViews.updateUI(model.state.practiceList);
 };
 
-const controlDeletePiece = function (id) {
+const controlDeletePiece = async function (id) {
   //1)Find pc using ud
 
   //1)Delete id from state
@@ -85,6 +85,11 @@ const controlDeletePiece = function (id) {
 
   //2)Read the function name c'mon
   model.deleteSinglePieceLocalStorage(id);
+
+  //2.5) Going to try and add an animation in here:
+  const animDur = 200; //animDur is .7ss but wait time is 200ms
+  piecesViews.deletePieceAnimation(id, animDur);
+  await new Promise((resolve) => setTimeout(resolve, animDur));
 
   //3)Rerender piecesView
   piecesViews.updateUI(model.state.practiceList);

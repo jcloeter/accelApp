@@ -18,7 +18,6 @@ class Pieces {
 
   //Adds newest piece to list of pieces
   _generateMarkup = function (pc) {
-    console.log(pc);
     const markup = `
         <li class="pieces__item" href=#${pc.excerptId}>
           <div class='pieces__item-progress-bar'>${
@@ -82,6 +81,17 @@ class Pieces {
       });
     });
   };
+
+  deletePieceAnimation(id, animDur) {
+    const li = this._parent.querySelectorAll(".pieces__item");
+    li.forEach((li) => {
+      const liId = +li.attributes.href.value.split("#")[1];
+      if (id !== liId) return;
+      li.style.transition = `all .75s`;
+      li.style.transform = "translateY(30rem)";
+      li.style.opacity = "0";
+    });
+  }
 
   //Clears piecesView list from screen:
   clearPiecesList = function () {
