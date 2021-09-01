@@ -1,3 +1,4 @@
+$white-000: #fff;
 $gray-000: #f8f9fa;
 $gray-100: #f1f3f5;
 $gray-200: #e9ecef;
@@ -42,9 +43,16 @@ $orange-700: #f76707;
 $orange-800: #e8590c;
 $orange-900: #d9480f;
 
-$red-warning-000: #f03e3e;
-$red-warning-100: #e03131;
-$red-warning-200: #c92a2a;
+$red-000: #fff5f5;
+$red-100: #ffe3e3;
+$red-200: #ffc9c9;
+$red-300: #ffa8a8;
+$red-400: #ff8787;
+$red-500: #ff6b6b;
+$red-600: #fa5252;
+$red-700: #f03e3e;
+$red-800: #e03131;
+$red-900: #c92a2a;
 
 //font-family: "Lora", sans-serif;
 // font-family: "DM Serif Text", serif; //Use the italic for accel
@@ -62,9 +70,14 @@ html {
 }
 
 body {
-  margin: 3rem;
+  margin: 2rem;
   font-size: 1.6rem;
-  background: $gray-100;
+  background: $gray-200;
   font-family: "Lato", sans-serif; //<p> text font
   //   font-family: "Roboto", sans-serif; //<p> text font
+  max-width: 50rem;
+  height: 80vh;
+  margin: 2rem auto;
+  padding: 0 0.5rem;
+  position: relative;
 }

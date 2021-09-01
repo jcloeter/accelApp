@@ -1,31 +1,72 @@
-/////////////////////////////////////
-//Hierarchy:
-//    <section class="pieces" id="pieces">
-//    <ul class="pieces__list">
-//      <!-- <li class="pieces__item">
-//        <div class="pieces__item-description">
-//          <h4>Symphony 3 by Beethoven</h4>
-//          <p>B-flat Arpeggios in mv4, mm. 200-205</p>
-//        </div>
-//        <div class="pieces__item-progress">
-//          <p>Lvl 3/18</p>
-//          <p>80 bpm, Target is 144 bpm</p>
-//        </div>
-//      </li> -->
-//    </ul>
-//  </section>
-
 .pieces {
   &__list {
     .pieces__item {
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      background: $gray-000;
+      padding: 1rem;
+      border-radius: 1px;
+      margin-bottom: 0.3rem;
+      &-progress-bar {
+        min-height: 3rem;
+        min-width: 3rem;
+        background-color: $cyan-500;
+        color: $gray-100;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        margin-left: 1rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+      }
+
       &-description {
+        .pieces__item-piece-naming {
+          font-size: 1.4rem;
+          .composer-span {
+            // color: red;
+            font-weight: 500;
+          }
+        }
+        .pieces__item-excerpt-naming {
+          font-size: 1.2rem;
+          font-weight: 400;
+        }
       }
       &-progress {
+        display: none;
+      }
+      .pieces__item-delete-btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        font-size: 1rem;
+        color: $red-600;
+        color: $gray-600;
+        // background-color: $red-warning-000;
+        background-color: $gray-300;
+        min-height: 1.5rem;
+        min-width: 1.5rem;
+        padding: 0;
+        margin-right: 1rem;
+        border-radius: 50px;
+        &:hover {
+          background-color: $red-200;
+          color: $red-600;
+        }
+        &:active {
+          background-color: $red-700;
+          color: $red-900;
+        }
       }
     }
   }
-}
-.pieces__item {
-  background: $gray-200;
-  margin-bottom: 1rem;
 }

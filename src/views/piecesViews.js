@@ -18,21 +18,27 @@ class Pieces {
 
   //Adds newest piece to list of pieces
   _generateMarkup = function (pc) {
+    console.log(pc);
     const markup = `
         <li class="pieces__item" href=#${pc.excerptId}>
-            <div class="pieces__item-description">
-                <h4>${pc.piece} ${pc.composer ? "by " + pc.composer : ""}</h4>
-                <p>${pc.excerptDescription}${
-      pc.measureNumbers ? ", mm. " + pc.measureNumbers : ""
-    }</p>
-            </div>
-            <div class="pieces__item-progress">
-                <p>Lvl ${pc.progress.currLevel}/${pc.progress.totalLevels}</p>
-                <p>${pc.progress.currTempo} bpm, Goal of ${
+          <div class='pieces__item-progress-bar'>${
+            pc.progress.progressPercent
+          }%</div>
+              <div class="pieces__item-description">
+                  <h4 class="pieces__item-piece-naming">${pc.piece} ${
+      pc.composer ? `<span class='composer-span'> by ${pc.composer}</span>` : ""
+    }</h4>
+                  <p class="pieces__item-excerpt-naming">${
+                    pc.excerptDescription
+                  }${pc.measureNumbers ? ", mm. " + pc.measureNumbers : ""}</p>
+              </div>
+              <div class="pieces__item-progress">
+                  <p>Lvl ${pc.progress.currLevel}/${pc.progress.totalLevels}</p>
+                  <p>${pc.progress.currTempo} bpm, Goal of ${
       pc.goalTempo
     }  bpm</p>
-    <button class="pieces__itme-delete-btn" type="button">❌</button>
-            </div>
+              </div>
+      <button class="pieces__item-delete-btn" type="button">✖ </button>
         </li>
       `;
     this._ulElement.insertAdjacentHTML("afterbegin", markup);
@@ -65,7 +71,7 @@ class Pieces {
 
   //This function should be listening for a click on the X, but it bubble up and causes the practice mode to be engaged
   addHandlerDeletePiece = function (callback) {
-    const deleteBtn = document.querySelectorAll(".pieces__itme-delete-btn");
+    const deleteBtn = document.querySelectorAll(".pieces__item-delete-btn");
 
     deleteBtn.forEach((btn) => {
       btn.addEventListener("click", function (e) {
