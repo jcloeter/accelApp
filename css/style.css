@@ -1,18 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Lato:wght@300;400&family=Lora:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  scroll-behavior: smooth; }
 
 body {
   margin: 3rem;
-  font-size: 1.6rem; }
-
-h1 {
-  color: red; }
+  font-size: 1.6rem;
+  background: #f1f3f5;
+  font-family: "Lato", sans-serif; }
 
 .pieces__item {
-  background-color: antiquewhite;
+  background: #e9ecef;
   margin-bottom: 1rem; }

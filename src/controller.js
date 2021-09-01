@@ -21,11 +21,17 @@ const controlNewPiece = function (e) {
 
   //4)Clear form view!
   formViews.clear();
+
+  //4.5) Make sure there won't be a duplicate pr piece in pr mode
+  practiceViews.clear();
 };
 
 const controlPracticeMode = function (id) {
   //0)Clear Form
   formViews.clear();
+
+  //0.5) Make sure there won't be a duplicate pr piece in pr mode
+  practiceViews.clear();
 
   //1) Clears list of pieces from UI
   piecesViews.clearPiecesList();

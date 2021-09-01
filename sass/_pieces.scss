@@ -1,0 +1,31 @@
+/////////////////////////////////////
+//Hierarchy:
+//    <section class="pieces" id="pieces">
+//    <ul class="pieces__list">
+//      <!-- <li class="pieces__item">
+//        <div class="pieces__item-description">
+//          <h4>Symphony 3 by Beethoven</h4>
+//          <p>B-flat Arpeggios in mv4, mm. 200-205</p>
+//        </div>
+//        <div class="pieces__item-progress">
+//          <p>Lvl 3/18</p>
+//          <p>80 bpm, Target is 144 bpm</p>
+//        </div>
+//      </li> -->
+//    </ul>
+//  </section>
+
+.pieces {
+  &__list {
+    .pieces__item {
+      &-description {
+      }
+      &-progress {
+      }
+    }
+  }
+}
+.pieces__item {
+  background: $gray-200;
+  margin-bottom: 1rem;
+}

@@ -38,6 +38,8 @@ class Form {
   };
 
   _generateMarkup = function () {
+    this._form.innerHTML = "";
+
     const markup = `
     <label for="composer">Composer</label>
     <input list="composer-list" type="text" value="Mahler" id="composer" />
