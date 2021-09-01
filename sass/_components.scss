@@ -30,17 +30,25 @@
       font-size: 1.3rem;
       text-transform: uppercase;
       margin: 0 1rem;
-      //   border-radius: 30px;
       font-weight: 300;
+      //   display: block;
       content: "New Piece";
       font-family: "Roboto", serif;
       letter-spacing: 2px;
-
-      // border-radius: 40%;
+      max-width: 12rem;
+      opacity: 1;
+      transition: max-width 0.2s ease-in-out, opacity 0.2s ease-in 0.1s;
     }
   }
+
+  &:after {
+    content: "";
+    max-width: 0rem;
+    opacity: 0;
+
+    // display: none;
+  }
   &:active {
-    // background-color: blue;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 2px 3px rgba(0, 0, 0, 0.24);
     transition: min-width 1s, background-color 0.05s;
     background-color: $teal-500;

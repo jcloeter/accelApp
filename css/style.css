@@ -12,13 +12,46 @@ html {
 body {
   margin: 2rem;
   font-size: 1.6rem;
-  background: #e9ecef;
+  background: #f8f9fa;
   font-family: "Lato", sans-serif;
   max-width: 50rem;
   height: 80vh;
   margin: 2rem auto;
   padding: 0 0.5rem;
   position: relative; }
+
+.new-piece-form {
+  min-height: 30vh;
+  background-color: #e3fafc;
+  padding: 1rem; }
+  .new-piece-form label {
+    display: inline-block; }
+  .new-piece-form p {
+    font-size: 1.4rem;
+    line-height: 4rem; }
+  .new-piece-form input {
+    border: none;
+    border-bottom: 2px solid #343a40;
+    height: 2rem;
+    margin: 1rem 2rem;
+    line-height: 3rem;
+    padding: 0.5rem;
+    background-color: #f8f9fa; }
+  .new-piece-form .new-piece-btn {
+    border: none;
+    background-color: #0c8599;
+    color: #fff;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: "Roboto" serif;
+    letter-spacing: 0.25rem; }
 
 .header {
   background-color: #f8f9fa;
@@ -32,7 +65,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background: #f8f9fa;
+  background: #fff;
   padding: 1rem;
   border-radius: 1px;
   margin-bottom: 0.3rem; }
@@ -111,7 +144,14 @@ body {
       font-weight: 300;
       content: "New Piece";
       font-family: "Roboto", serif;
-      letter-spacing: 2px; }
+      letter-spacing: 2px;
+      max-width: 12rem;
+      opacity: 1;
+      transition: max-width 0.2s ease-in-out, opacity 0.2s ease-in 0.1s; }
+  .add-new-piece:after {
+    content: "";
+    max-width: 0rem;
+    opacity: 0; }
   .add-new-piece:active {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 2px 3px rgba(0, 0, 0, 0.24);
     transition: min-width 1s, background-color 0.05s;

@@ -107,7 +107,6 @@ const init = function () {
   controlInitialPage();
   navigationViews.addHandlerInitHash();
   formViews.addHandlerShowForm();
-  formViews.addHandlerLetsPractice();
   formViews.addHandlerFormSubmit(controlNewPiece);
   piecesViews.addHandlerDeletePiece(controlDeletePiece);
   piecesViews.addHandlerHash(controlPracticeMode, controlNavigationToHome);
