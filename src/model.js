@@ -10,6 +10,10 @@ export const setPracticeData = function (e) {
     inputObj[input.id] = input.value;
   });
 
+  //Default is set to start at half tempo now:
+  if (!inputObj["starting-tempo"])
+    inputObj["starting-tempo"] = Math.ceil(+inputObj["goal-tempo"] / 2);
+
   return {
     composer: inputObj["composer"],
     piece: inputObj["piece"],

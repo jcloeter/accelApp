@@ -21,9 +21,20 @@ body {
   position: relative; }
 
 .new-piece-form {
-  min-height: 30vh;
   background-color: #e3fafc;
   padding: 1rem; }
+  .new-piece-form .form__piece-title {
+    margin: 3rem 1rem 1rem;
+    font-size: 2rem;
+    font-family: "DM Serif Text"; }
+  .new-piece-form .form__piece-sentence {
+    padding: 0 2rem; }
+  .new-piece-form .form__plan-title {
+    margin: 3rem 1rem 1rem;
+    font-family: "DM Serif Text";
+    font-size: 2rem; }
+  .new-piece-form .form__plan-inputs {
+    padding: 0 2rem; }
   .new-piece-form label {
     display: inline-block; }
   .new-piece-form p {
@@ -37,9 +48,12 @@ body {
     line-height: 3rem;
     padding: 0.5rem;
     background-color: #f8f9fa; }
+  .new-piece-form input[type="number"] {
+    max-width: 5rem;
+    margin: 1rem 0.2rem; }
   .new-piece-form .new-piece-btn {
     border: none;
-    background-color: #0c8599;
+    background-color: #e8590c;
     color: #fff;
     border-radius: 30px;
     display: flex;
@@ -47,11 +61,13 @@ body {
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 3rem;
     text-transform: uppercase;
     font-weight: 600;
     font-family: "Roboto" serif;
-    letter-spacing: 0.25rem; }
+    letter-spacing: 0.25rem;
+    margin: 0 0 0 1rem;
+    display: inline; }
 
 .header {
   background-color: #e3fafc;
@@ -79,7 +95,7 @@ body {
       font-weight: 600;
       background-color: #0c8599;
       color: #fff;
-      padding: 0.5rem 1rem;
+      padding: 0.75rem 1rem;
       border-radius: 15px;
       text-transform: uppercase; }
   .header__quote {

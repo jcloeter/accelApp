@@ -81,8 +81,10 @@ class Form {
     // `;
 
     const markupExperiment = `
-    <h3>Describe Your Piece</h3>
-    <p>Choose a challenging passage lasting no more than three measures. Give it a nickname so you remember where it is. </p>
+    <h3 class="form__piece-title">Describe Your Piece.</h3>
+    <p class="form__piece-sentence">Choose a challenging passage lasting no more than three measures. Give it a short description so you can find it faster. </p>
+
+    <div class="form__piece-inputs">
     <input type="text" list="piece-list" id="piece" placeholder="Piece" value="Concerto for Trumpet" />
     <datalist id="piece-datalist">
       <option value="Symphony"></option>
@@ -104,15 +106,22 @@ class Form {
       type="text"
       id="excerpt-description"
       value="Wide intervals in recap"
-      placeholder="Description"
+      placeholder='"Arpeggios on line 3"'
     />
+  </div>
 
-    <h5>Let's Make a Plan.</h5>
-    <p>To achieve mastery at my goal tempo of <input id="starting-tempo" type="number" placeholder="" value="144" min="30" max="220" /> bpm , I will start at half tempo, increasing it by <input id="tempo-increase" type="number" value="4" min="1" max="10" />bpm after playing it corectly <input id="repetitions" type="number" value="3" min="1" max="6" /> times in a row </p>
+    <h5 class="form__plan-title">Now Let's Make a Plan.</h5>
+
+      <p class="form__plan-inputs">To achieve mastery at my goal tempo of 
+        <input id="goal-tempo" type="number" placeholder="" value="144" min="30" max="230" />
+      bpm , I will start at half tempo, increasing it by 
+        <input id="tempo-increase" type="number" value="4" min="1" max="10" />
+      bpm after playing it correctly 
+        <input id="repetitions" type="number" value="3" min="1" max="6" /> times in a row.  <button id="new-piece-btn" class="new-piece-btn" type="submit">Add Plan </button></p>
 
   
 
-    <button id="new-piece-btn" class="new-piece-btn" type="submit">Create </button>
+   
     `;
     this._form.insertAdjacentHTML("afterbegin", markupExperiment);
   };
