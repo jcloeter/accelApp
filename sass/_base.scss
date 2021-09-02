@@ -70,14 +70,13 @@ html {
 }
 
 body {
-  margin: 2rem;
   font-size: 1.6rem;
   background: $gray-000;
   font-family: "Lato", sans-serif; //<p> text font
   //   font-family: "Roboto", sans-serif; //<p> text font
   max-width: 50rem;
   height: 80vh;
-  margin: 2rem auto;
+  margin: 0.5rem auto;
   padding: 0 0.5rem;
   position: relative;
 }

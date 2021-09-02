@@ -6,12 +6,40 @@
 .header {
   background-color: $cyan-000;
   margin-bottom: 0.3rem;
-  &__accel-logo {
-    font-family: "DM Serif Text";
-    color: $gray-700;
-    font-size: 2.6rem;
-    margin: 2rem;
+
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    // background-color: $teal-100;
+    width: 100%;
+    padding-top: 1.5rem;
+
+    .header__accel-logo {
+      font-family: "DM Serif Text";
+      color: $gray-700;
+      font-size: 2.8rem;
+      padding-left: 2rem;
+    }
+    .navbar-about {
+      margin-right: 2rem;
+      display: inline-block;
+      color: $gray-700;
+      text-decoration: none;
+      // border-bottom: solid $gray-800;
+      font-family: "Lato";
+      font-size: 1rem;
+      letter-spacing: 0.3rem;
+      font-weight: 600;
+      background-color: $cyan-800;
+      color: $white-000;
+      padding: 0.5rem 1rem;
+      border-radius: 15px;
+      text-transform: uppercase;
+    }
   }
+
   &__quote {
     font-family: "Lora";
     margin-top: 3rem;
@@ -20,12 +48,12 @@
     &-text {
       line-height: 5rem;
       &:before {
-        content: "“";
+        content: "“ ";
 
         @include quotes;
       }
       &:after {
-        content: "”";
+        content: " ”";
         @include quotes;
       }
     }
