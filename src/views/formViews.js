@@ -83,11 +83,11 @@ class Form {
     const markupExperiment = `
     <h3>Describe Your Piece</h3>
     <p>Choose a challenging passage lasting no more than three measures. Give it a nickname so you remember where it is. </p>
-    <input type="text" list="piece-list" id="piece" placeholder="Piece" />
+    <input type="text" list="piece-list" id="piece" placeholder="Piece" value="Concerto for Trumpet" />
     <datalist id="piece-datalist">
       <option value="Symphony"></option>
     </datalist>
-    <input list="composer-list" type="text" placeholder="Composer" id="composer" />
+    <input list="composer-list" value="Haydn"type="text" placeholder="Composer" id="composer" />
     <datalist id="composer-datalist">
       <option value="Bach"></option>
       <option value="Beethoven"></option>
@@ -98,15 +98,17 @@ class Form {
       id="measure-numbers"
       type="text"
       placeholder="Measures"
+      value="103-105"
     />
     <input
       type="text"
       id="excerpt-description"
+      value="Wide intervals in recap"
       placeholder="Description"
     />
 
     <h5>Let's Make a Plan.</h5>
-    <p>To achieve mastery at my goal tempo of <input id="starting-tempo" type="number" placeholder="" min="30" max="220" /> bpm , I will start at half tempo, increasing it by <input id="tempo-increase" type="number" value="4" min="1" max="10" />bpm after playing it corectly <input id="repetitions" type="number" value="3" min="1" max="6" /> times in a row </p>
+    <p>To achieve mastery at my goal tempo of <input id="starting-tempo" type="number" placeholder="" value="144" min="30" max="220" /> bpm , I will start at half tempo, increasing it by <input id="tempo-increase" type="number" value="4" min="1" max="10" />bpm after playing it corectly <input id="repetitions" type="number" value="3" min="1" max="6" /> times in a row </p>
 
   
 

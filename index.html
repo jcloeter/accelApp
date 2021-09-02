@@ -10,17 +10,30 @@
     <title>accel.</title>
   </head>
   <body>
-    <section class="header">
-      <h3>accel.</h3>
+    <section class="header" id="header">
+      
+      <h3 class="header__accel-logo">accel.</h3>
+
+      <div class="header__quote">
+        <p class="header__quote-text">If you learn something slowly you forget it slowly; if you learn something very quickly you forget it immediately.</p>
+        <div class="header__quote-author">
+          <p class="header__quote-name">Itzhak Perlman</p>
+          <p class="header__quote-position">International Violin Soloist</p>
+        </div>
+      </div>
+
+    <form id="new-piece-form" class="new-piece-form">
+      </form>
+
       <!-- <p>"10 minutes of slow practice equals an hour at a tempo faster than you can process"</p>
       <h4>Bud Herseth, Former Principal Trumpet, Chicago Symphony Orchestra</h4> -->
-      <button id="add-new-piece" class="fab add-new-piece" type="button">+ </button>
+      <button id="add-new-piece" class="fab add-new-piece" type="button"><span>+</span> New Piece </button>
       <!-- <a id="lets-practice-btn" href="#pieces">
         <button> ⬇ Let's Practice</button>
       </a> -->
     </section>
 
-    <form id="new-piece-form" class="new-piece-form">
+    <!-- <form id="new-piece-form" class="new-piece-form"> -->
       <!-- <label for="composer">Composer</label>
       <input list="composer-list" type="text" value="Mahler" id="composer" />
       <datalist id="composer-datalist">
@@ -59,7 +72,7 @@
       <input id="tempo-increase" type="number" value="4" min="1" max="10" />
 
       <button id="new-piece-btn" type="submit">Create</button> -->
-    </form>
+    <!-- </form> -->
 
     <section class="pieces" id="pieces">
       <ul class="pieces__list">
