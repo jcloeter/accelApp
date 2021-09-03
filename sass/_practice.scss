@@ -3,7 +3,7 @@
   min-height: 80vh;
   //   color: $white-000;
   line-height: 3rem;
-  padding-bottom: 2rem;
+  padding-bottom: 10rem;
 
   &__pc--information {
     .practice__pc--title {
@@ -84,6 +84,7 @@
       }
     }
     #btn__next-level {
+      cursor: pointer;
       border: none;
       border-radius: 20px;
       background-color: $orange-800;
@@ -120,8 +121,8 @@
     .practice__progress--history-summary {
       font-size: 1.4rem;
       .level-number {
-        background-color: $orange-900;
-        color: $white-000;
+        background-color: $orange-100;
+        // color: $white-000;
         height: 3rem;
         width: 3rem;
         font-size: 1.8rem;

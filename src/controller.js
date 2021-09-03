@@ -29,7 +29,7 @@ const controlNewPiece = function (e) {
 };
 
 const controlPracticeMode = function (id) {
-  //0)Clear Form and quote
+  //0)Clear Form, quote, and newPc button:
   formViews.clear();
   headerViews.clear();
 

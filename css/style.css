@@ -177,7 +177,7 @@ body {
   background-color: #c5f6fa;
   min-height: 80vh;
   line-height: 3rem;
-  padding-bottom: 2rem; }
+  padding-bottom: 10rem; }
   .practice__pc--information .practice__pc--title {
     padding-top: 2rem;
     font-size: 1.4rem;
@@ -233,6 +233,7 @@ body {
       content: "";
       background-color: red; }
     .practice .next-level-form #btn__next-level {
+      cursor: pointer;
       border: none;
       border-radius: 20px;
       background-color: #e8590c;
@@ -263,8 +264,7 @@ body {
     .practice__progress--history .practice__progress--history-unit .practice__progress--history-summary {
       font-size: 1.4rem; }
       .practice__progress--history .practice__progress--history-unit .practice__progress--history-summary .level-number {
-        background-color: #d9480f;
-        color: #fff;
+        background-color: #ffe8cc;
         height: 3rem;
         width: 3rem;
         font-size: 1.8rem;

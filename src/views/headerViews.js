@@ -14,10 +14,10 @@ class HeaderViews {
 
   _generateQuoteMarkup() {
     const markup = `
-    <p class="header__quote-text">If you learn something slowly you forget it slowly; if you learn something very quickly you forget it immediately.</p>
+    <p class="header__quote-text">One must always practice slowly. If you learn something slowly you forget it slowly; if you learn something very quickly you forget it immediately.</p>
     <div class="header__quote-author">
-      <p class="header__quote-name">Itzhak Perlman</p>
-      <p class="header__quote-position">International Violin Soloist</p>
+      <p class="header__quote-name">-Itzhak Perlman</p>
+      <p class="header__quote-position"> &nbspInternational Violin Soloist</p>
     </div>
       `;
     this._quote.insertAdjacentHTML("afterbegin", markup);

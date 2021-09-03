@@ -7,10 +7,10 @@ class Pieces {
     this._data = data;
 
     //If there arent any pieces, tell user how to add!
-    if (!data[0])
-      return (this._ulElement.innerHTML =
-        "<p>No pieces yet, click ➕ to add</p>");
-
+    if (!data[0]) return (this._ulElement.innerHTML = "");
+    {
+      /* <p>No pieces yet, click ➕ to add</p> */
+    }
     //To generate entire list, do this:
     this._ulElement.innerHTML = "";
     data.forEach((pc) => this._generateMarkup(pc));
