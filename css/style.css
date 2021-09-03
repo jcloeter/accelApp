@@ -21,10 +21,10 @@ body {
   position: relative; }
 
 .new-piece-form {
-  background-color: #e3fafc;
-  padding: 1rem; }
+  background-color: #c5f6fa;
+  padding: 0rem 1rem 0rem; }
   .new-piece-form .form__piece-title {
-    margin: 3rem 1rem 1rem;
+    margin: 0rem 1rem 1rem;
     font-size: 2rem;
     font-family: "DM Serif Text"; }
   .new-piece-form .form__piece-sentence {
@@ -34,7 +34,8 @@ body {
     font-family: "DM Serif Text";
     font-size: 2rem; }
   .new-piece-form .form__plan-inputs {
-    padding: 0 2rem; }
+    padding: 0 2rem;
+    padding-bottom: 2rem; }
   .new-piece-form label {
     display: inline-block; }
   .new-piece-form p {
@@ -67,11 +68,11 @@ body {
     font-family: "Roboto" serif;
     letter-spacing: 0.25rem;
     margin: 0 0 0 1rem;
-    display: inline; }
+    display: inline;
+    cursor: pointer; }
 
 .header {
-  background-color: #e3fafc;
-  margin-bottom: 0.3rem; }
+  background-color: #e3fafc; }
   .header .navbar {
     display: flex;
     flex-direction: row;
@@ -100,9 +101,9 @@ body {
       text-transform: uppercase; }
   .header__quote {
     font-family: "Lora";
-    margin-top: 3rem;
-    padding: 0 2rem; }
+    padding: 0 2rem 3rem; }
     .header__quote-text {
+      margin-top: 3rem;
       line-height: 5rem; }
       .header__quote-text:before {
         content: "“ ";
@@ -171,6 +172,113 @@ body {
     .pieces__list .pieces__item .pieces__item-delete-btn:active {
       background-color: #f03e3e;
       color: #c92a2a; }
+
+.practice {
+  background-color: #c5f6fa;
+  min-height: 80vh;
+  line-height: 3rem;
+  padding-bottom: 2rem; }
+  .practice__pc--information .practice__pc--title {
+    padding-top: 2rem;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    text-align: center; }
+    .practice__pc--information .practice__pc--title .practice__pc--title-main {
+      color: #0ca678;
+      font-weight: 500; }
+    .practice__pc--information .practice__pc--title .practice__pc--title-sub {
+      margin-top: 0.3rem;
+      color: #087f5b;
+      font-size: 1.6rem;
+      font-weight: 500; }
+  .practice__pc--information .practice__pc--progress {
+    color: #212529; }
+    .practice__pc--information .practice__pc--progress-level {
+      margin: 2rem auto 0;
+      text-align: center;
+      font-size: 2.5rem;
+      color: #212529;
+      font-family: "DM Serif Text"; }
+    .practice__pc--information .practice__pc--progress .tempo-number {
+      margin: 3rem auto 2rem;
+      background-color: #f8f9fa;
+      font-family: "Lora";
+      height: 20rem;
+      width: 20rem;
+      font-size: 10rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%; }
+      .practice__pc--information .practice__pc--progress .tempo-number .bpm {
+        font-size: 1.2rem;
+        font-weight: 900;
+        letter-spacing: 0.1rem; }
+    .practice__pc--information .practice__pc--progress-tempo {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #495057; }
+  .practice .next-level-form {
+    text-align: center;
+    background-color: #fff;
+    max-width: 90%;
+    max-height: 6rem;
+    border-radius: 5px;
+    margin: 0 auto;
+    font-family: "Lora";
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; }
+    .practice .next-level-form .input__checkbox--repetition:after {
+      content: "";
+      background-color: red; }
+    .practice .next-level-form #btn__next-level {
+      border: none;
+      border-radius: 20px;
+      background-color: #e8590c;
+      color: #fff;
+      padding: 1rem 1rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      margin: 1rem 0 1rem 1rem; }
+      .practice .next-level-form #btn__next-level:active {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 2px 3px rgba(0, 0, 0, 0.24);
+        transition: min-width 1s, background-color 0.05s;
+        background-color: #d9480f;
+        transform: translate(0%, 5%); }
+
+.practice__progress--history {
+  max-width: 70%;
+  margin: 2rem auto 0; }
+  .practice__progress--history .practice__progress--history-unit {
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: content;
+    justify-content: space-between;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    padding: 1rem 1rem; }
+    .practice__progress--history .practice__progress--history-unit .practice__progress--history-summary {
+      font-size: 1.4rem; }
+      .practice__progress--history .practice__progress--history-unit .practice__progress--history-summary .level-number {
+        background-color: #d9480f;
+        color: #fff;
+        height: 3rem;
+        width: 3rem;
+        font-size: 1.8rem;
+        display: inline-block;
+        border-radius: 50%;
+        text-align: center;
+        margin-right: 1rem; }
+    .practice__progress--history .practice__progress--history-unit .practice__progress--history-date {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #868e96; }
+
+.repetition-label {
+  text-align: center; }
 
 .fab {
   position: fixed;

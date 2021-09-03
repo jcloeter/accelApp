@@ -51,12 +51,11 @@ class nextLevelView {
 
     let markup = arrLvlAfterOne
       .map((lvl, i) => {
-        return `<p class="practice__progress--history-summary"> ✅ Level ${
-          lvl.lvl
-        }: ${this._prObj.repetitionsPerLevel} ${
-          this._prObj.repetitionsPerLevel == 1 ? "repetition" : "repetitions"
-        } at ${lvl.lvlTempo} bpm</p>
+        return `
+        <div class="practice__progress--history-unit">
+        <p class="practice__progress--history-summary"> <span class="level-number">${lvl.lvl}</span> ${lvl.lvlTempo} bpm</p>
       <p class="practice__progress--history-date"><small>${lvl.date}</small></p>
+      </div>
        `;
       })
       .reverse()
@@ -67,3 +66,11 @@ class nextLevelView {
 }
 
 export default new nextLevelView();
+
+{
+  /* <p class="practice__progress--history-summary"> ✅ Level ${lvl.lvl}: ${
+          this._prObj.repetitionsPerLevel
+        } ${
+          this._prObj.repetitionsPerLevel == 1 ? "repetition" : "repetitions"
+        } at ${lvl.lvlTempo} bpm</p> */
+}

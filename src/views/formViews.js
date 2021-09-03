@@ -14,6 +14,7 @@ class Form {
     this._addNewPieceButton.addEventListener("click", function () {
       console.log("in a bit this will reveal the form");
       that._generateMarkup();
+      callback();
     });
   };
 

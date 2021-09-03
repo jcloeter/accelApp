@@ -5,6 +5,7 @@ import nextLevelViews from "/src/views/nextLevelViews.js";
 import piecesViews from "/src/views/piecesViews.js";
 import practiceViews from "/src/views/practiceViews.js";
 import navigationViews from "/src/views/navigationViews.js";
+import headerViews from "/src/views/headerViews.js";
 
 const controlNewPiece = function (e) {
   //1) Add new piece information to practiceList
@@ -19,16 +20,18 @@ const controlNewPiece = function (e) {
   //3)Re add eventListeners after a new piece is added
   piecesViews.addHandlerDeletePiece(controlDeletePiece);
 
-  //4)Clear form view!
+  //4)Clear form view! and add header again:
   formViews.clear();
+  headerViews.update();
 
   //4.5) Make sure there won't be a duplicate pr piece in pr mode
   practiceViews.clear();
 };
 
 const controlPracticeMode = function (id) {
-  //0)Clear Form
+  //0)Clear Form and quote
   formViews.clear();
+  headerViews.clear();
 
   //0.5) Make sure there won't be a duplicate pr piece in pr mode
   practiceViews.clear();
@@ -69,10 +72,15 @@ const controlNavigationToHome = function () {
 
   //Re add listener after navigation, must be done after updateUI or btns wont exist
   piecesViews.addHandlerDeletePiece(controlDeletePiece);
+
+  //Add quote back in:
+  headerViews.update();
 };
 
 const controlInitialPage = function () {
   model.getLocalStorage();
+  headerViews.update();
+
   //This updates UI so localStorage may be rendered:
   piecesViews.updateUI(model.state.practiceList);
 };
@@ -99,14 +107,16 @@ const controlDeletePiece = async function (id) {
 };
 
 const controlShowForm = function () {
+  console.log("showing form");
   formViews.clear();
+  headerViews.clear();
   formViews.showForm();
 };
 
 const init = function () {
   controlInitialPage();
   navigationViews.addHandlerInitHash();
-  formViews.addHandlerShowForm();
+  formViews.addHandlerShowForm(controlShowForm);
   formViews.addHandlerFormSubmit(controlNewPiece);
   piecesViews.addHandlerDeletePiece(controlDeletePiece);
   piecesViews.addHandlerHash(controlPracticeMode, controlNavigationToHome);

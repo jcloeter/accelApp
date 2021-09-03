@@ -39,11 +39,12 @@
 
 .new-piece-form {
   // min-height: 30vh;
-  background-color: $cyan-000;
-  padding: 1rem;
+  // border-top: solid 3px $gray-800;
+  background-color: $cyan-100;
+  padding: 0rem 1rem 0rem;
 
   .form__piece-title {
-    margin: 3rem 1rem 1rem;
+    margin: 0rem 1rem 1rem;
     font-size: 2rem;
     font-family: "DM Serif Text";
   }
@@ -57,6 +58,7 @@
   }
   .form__plan-inputs {
     padding: 0 2rem;
+    padding-bottom: 2rem;
   }
 
   label {
@@ -100,5 +102,6 @@
     letter-spacing: 0.25rem;
     margin: 0 0 0 1rem;
     display: inline;
+    cursor: pointer;
   }
 }

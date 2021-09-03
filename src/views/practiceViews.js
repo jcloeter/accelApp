@@ -31,22 +31,29 @@ class Practice {
   _generatePracticePieceMarkup = function (pc) {
     const markup = `
       <div class="practice__pc--title">
-        <h3 class="practice__pc--title-main">${pc.piece} ${
+            <p class="practice__pc--title-main">${pc.piece} ${
       pc.composer ? "by " + pc.composer : ""
-    }</h3>
-        <h4 class="practice__pc--title-sub">${pc.excerptDescription}${
+    }</p>
+            <p class="practice__pc--title-sub">${pc.excerptDescription}${
       pc.measureNumbers ? ", mm. " + pc.measureNumbers : ""
-    }</h4>
+    }</p>
       </div>
-        <div class="practice__pc--progress">
+      <div class="practice__pc--progress">
         <div class="practice__pc--progress-level">Level ${
           pc.progress.currLevel
-        }/${pc.progress.totalLevels}</div>
-        <div class="practice__pc--progress-tempo">${
-          pc.progress.currTempo
-        } bpm, Goal of ${pc.goalTempo}  bpm. ${
-      pc.progress.progressPercent
-    }%</div>
+        }: Play ${this._prPiece.repetitionsPerLevel} times at ${
+      pc.progress.currTempo
+    } bpm
+          </div>
+      
+          <div class="practice__pc--progress-tempo">
+           
+          Goal: ${pc.goalTempo}  bpm. Progress: ${pc.progress.progressPercent}%
+        </div>
+          <div class="tempo-number">${
+            pc.progress.currTempo
+          } <span class="bpm">bpm<span></div> 
+         
       </div>
     `;
     this._prInformation.insertAdjacentHTML("afterbegin", markup);
@@ -55,7 +62,7 @@ class Practice {
   _generateInitialRepetitionsMarkup = function () {
     const reps = this._prPiece.repetitionsPerLevel;
     const markup = `
-      <label for="repetition">Click After Each Repetition:</label>
+      <label class="repetition-label" for="repetition">Repetitions:</label>
       ${this._generateCheckboxes(reps)}
       <button type="submit" class="btn__next-level" id="btn__next-level">Next Level</button>
       `;
@@ -78,3 +85,10 @@ class Practice {
 }
 
 export default new Practice();
+
+{
+  /* <div class="practice__pc--progress-level">Level ${
+  pc.progress.currLevel
+}/${pc.progress.totalLevels}
+  </div> */
+}

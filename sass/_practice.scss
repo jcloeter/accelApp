@@ -1,0 +1,148 @@
+.practice {
+  background-color: $cyan-100;
+  min-height: 80vh;
+  //   color: $white-000;
+  line-height: 3rem;
+  padding-bottom: 2rem;
+
+  &__pc--information {
+    .practice__pc--title {
+      //   font-family: "DM Serif Text";
+      padding-top: 2rem;
+
+      font-size: 1.4rem;
+      line-height: 2rem;
+      text-align: center;
+      .practice__pc--title-main {
+        color: $teal-700;
+        font-weight: 500;
+      }
+      .practice__pc--title-sub {
+        margin-top: 0.3rem;
+        color: $teal-900;
+        // font-size: 2.2rem;
+        font-size: 1.6rem;
+        font-weight: 500;
+      }
+    }
+
+    .practice__pc--progress {
+      color: $gray-900;
+      &-level {
+        margin: 2rem auto 0;
+        text-align: center;
+        font-size: 2.5rem;
+        color: $gray-900;
+        font-family: "DM Serif Text";
+      }
+      .tempo-number {
+        margin: 3rem auto 2rem;
+        background-color: $gray-000;
+        //   font-family: "DM Serif Text";
+        font-family: "Lora";
+
+        height: 20rem;
+        width: 20rem;
+        font-size: 10rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        //   color: $gray-900;
+        //   background-color: $cyan-400;
+        border-radius: 50%;
+        .bpm {
+          font-size: 1.2rem;
+          font-weight: 900;
+          letter-spacing: 0.1rem;
+        }
+      }
+      &-tempo {
+        // background-color: #fff;
+        text-align: center;
+        font-size: 1.2rem;
+        color: $gray-700;
+      }
+    }
+  }
+
+  .next-level-form {
+    text-align: center;
+    background-color: #fff;
+    max-width: 90%;
+    max-height: 6rem;
+    border-radius: 5px;
+    margin: 0 auto;
+    font-family: "Lora";
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    .input__checkbox--repetition {
+      //   margin-right: 5rem;
+      &:after {
+        content: "";
+        background-color: red;
+      }
+    }
+    #btn__next-level {
+      border: none;
+      border-radius: 20px;
+      background-color: $orange-800;
+      color: #fff;
+      padding: 1rem 1rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      //   margin-left: 1rem;
+      margin: 1rem 0 1rem 1rem;
+      &:active {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 2px 3px rgba(0, 0, 0, 0.24);
+        transition: min-width 1s, background-color 0.05s;
+        background-color: $orange-900;
+        transform: translate(0%, 5%);
+      }
+    }
+  }
+}
+
+.practice__progress--history {
+  max-width: 70%;
+  margin: 2rem auto 0;
+  .practice__progress--history-unit {
+    background-color: $white-000;
+    display: flex;
+    flex-direction: row;
+    align-items: content;
+    justify-content: space-between;
+
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    padding: 1rem 1rem;
+    .practice__progress--history-summary {
+      font-size: 1.4rem;
+      .level-number {
+        background-color: $orange-900;
+        color: $white-000;
+        height: 3rem;
+        width: 3rem;
+        font-size: 1.8rem;
+        display: inline-block;
+        border-radius: 50%;
+        text-align: center;
+        margin-right: 1rem;
+        // display: flex;
+        // flex-direction: row;
+        // justify-content: center;
+        // align-items: center;
+      }
+    }
+    .practice__progress--history-date {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: $gray-600;
+    }
+  }
+}
+
+.repetition-label {
+  text-align: center;
+}

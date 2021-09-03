@@ -5,7 +5,7 @@
 
 .header {
   background-color: $cyan-000;
-  margin-bottom: 0.3rem;
+  // margin-bottom: 0.3rem;
 
   .navbar {
     display: flex;
@@ -42,10 +42,12 @@
 
   &__quote {
     font-family: "Lora";
-    margin-top: 3rem;
-    padding: 0 2rem;
+    // margin-top: 3rem; //This was causing big empty space when no quote was present
+    padding: 0 2rem 3rem;
 
     &-text {
+      margin-top: 3rem;
+
       line-height: 5rem;
       &:before {
         content: "“ ";
