@@ -45,7 +45,7 @@ class Form {
     <p class="form__piece-sentence">Choose a challenging passage lasting no more than three measures. Give it a short description so you can find it faster. </p>
 
     <div class="form__piece-inputs">
-    <input type="text" list="piece-list" id="piece" placeholder="Piece"  />
+    <input type="text" required list="piece-list" id="piece" placeholder="Piece"  />
     <datalist id="piece-datalist">
       <option value="Symphony"></option>
     </datalist>
@@ -65,7 +65,7 @@ class Form {
     <input
       type="text"
       id="excerpt-description"
-      
+      required
       placeholder='"Arpeggios on line 3"'
     />
   </div>
@@ -73,11 +73,11 @@ class Form {
     <h5 class="form__plan-title">Now Let's Make a Plan.</h5>
 
       <p class="form__plan-inputs">To achieve mastery at my goal tempo of 
-        <input id="goal-tempo" type="number" placeholder="120"  min="30" max="230" />
+        <input required id="goal-tempo" type="number" placeholder="120" value="120"  min="30" max="230" />
       bpm , I will start at half tempo, increasing it by 
-        <input id="tempo-increase" type="number" value="4" min="1" max="10" />
+        <input required id="tempo-increase" type="number" value="4" min="1" max="10" />
       bpm after playing it correctly 
-        <input id="repetitions" type="number" value="3" min="1" max="6" /> times in a row.  <button id="new-piece-btn" class="new-piece-btn" type="submit">Add Plan </button></p>
+        <input required id="repetitions" type="number" value="3" min="1" max="6" /> times in a row.  <button id="new-piece-btn" class="new-piece-btn" type="submit">Add Plan </button></p>
 
   
 
