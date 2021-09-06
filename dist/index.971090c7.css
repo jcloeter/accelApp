@@ -1,0 +1,313 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Lato:wght@300;400&family=Lora:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth; }
+body {
+  font-size: 1.6rem;
+  background: #f8f9fa;
+  font-family: "Lato", sans-serif;
+  max-width: 50rem;
+  height: 80vh;
+  margin: 0.5rem auto;
+  padding: 0 0.5rem;
+  position: relative; }
+.new-piece-form {
+  background-color: #c5f6fa;
+  padding: 0rem 1rem 0rem; }
+.new-piece-form .form__piece-title {
+    margin: 0rem 1rem 1rem;
+    font-size: 2rem;
+    font-family: "DM Serif Text"; }
+.new-piece-form .form__piece-sentence {
+    padding: 0 2rem; }
+.new-piece-form .form__plan-title {
+    margin: 3rem 1rem 1rem;
+    font-family: "DM Serif Text";
+    font-size: 2rem; }
+.new-piece-form .form__plan-inputs {
+    padding: 0 2rem;
+    padding-bottom: 2rem; }
+.new-piece-form label {
+    display: inline-block; }
+.new-piece-form p {
+    font-size: 1.4rem;
+    line-height: 4rem; }
+.new-piece-form input {
+    border: none;
+    border-bottom: 2px solid #343a40;
+    height: 2rem;
+    margin: 1rem 2rem;
+    line-height: 3rem;
+    padding: 0.5rem;
+    background-color: #f8f9fa; }
+.new-piece-form input[type="number"] {
+    max-width: 5rem;
+    margin: 1rem 0.2rem; }
+.new-piece-form .new-piece-btn {
+    border: none;
+    background-color: #e8590c;
+    color: #fff;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    padding: 0.6rem 3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: "Roboto" serif;
+    letter-spacing: 0.25rem;
+    margin: 0 0 0 1rem;
+    display: inline;
+    cursor: pointer; }
+.header {
+  background-color: #e3fafc; }
+.header .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-top: 1.5rem; }
+.header .navbar .header__accel-logo {
+      font-family: "DM Serif Text";
+      color: #495057;
+      font-size: 2.8rem;
+      padding-left: 2rem; }
+.header .navbar .navbar-about {
+      margin-right: 2rem;
+      display: inline-block;
+      color: #495057;
+      text-decoration: none;
+      font-family: "Lato";
+      font-size: 1rem;
+      letter-spacing: 0.3rem;
+      font-weight: 600;
+      background-color: #0c8599;
+      color: #fff;
+      padding: 0.75rem 1rem;
+      border-radius: 15px;
+      text-transform: uppercase; }
+.header__quote {
+    font-family: "Lora";
+    padding: 0 2rem 3rem; }
+.header__quote-text {
+      margin-top: 3rem;
+      line-height: 5rem; }
+.header__quote-text:before {
+        content: "“ ";
+        font-size: 3rem;
+        font-weight: 900; }
+.header__quote-text:after {
+        content: " ”";
+        font-size: 3rem;
+        font-weight: 900; }
+.header__quote-author {
+      font-size: 1.2rem;
+      margin: 4rem 0 0 3rem; }
+.header__quote-author .header__quote-name {
+        font-weight: 600; }
+.pieces__list .pieces__item {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 1px;
+  margin-bottom: 0.3rem; }
+.pieces__list .pieces__item-progress-bar {
+    min-height: 3rem;
+    min-width: 3rem;
+    background-color: #22b8cf;
+    color: #f1f3f5;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    margin-left: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px; }
+.pieces__list .pieces__item-description .pieces__item-piece-naming {
+    font-size: 1.4rem; }
+.pieces__list .pieces__item-description .pieces__item-piece-naming .composer-span {
+      font-weight: 500; }
+.pieces__list .pieces__item-description .pieces__item-excerpt-naming {
+    font-size: 1.2rem;
+    font-weight: 400; }
+.pieces__list .pieces__item-progress {
+    display: none; }
+.pieces__list .pieces__item .pieces__item-delete-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    font-size: 1rem;
+    color: #fa5252;
+    color: #868e96;
+    background-color: #dee2e6;
+    min-height: 1.5rem;
+    min-width: 1.5rem;
+    padding: 0;
+    margin-right: 1rem;
+    border-radius: 50px; }
+.pieces__list .pieces__item .pieces__item-delete-btn:hover {
+      background-color: #ffc9c9;
+      color: #fa5252; }
+.pieces__list .pieces__item .pieces__item-delete-btn:active {
+      background-color: #f03e3e;
+      color: #c92a2a; }
+.practice {
+  background-color: #c5f6fa;
+  min-height: 80vh;
+  line-height: 3rem;
+  padding-bottom: 10rem; }
+.practice__pc--information .practice__pc--title {
+    padding-top: 2rem;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    text-align: center; }
+.practice__pc--information .practice__pc--title .practice__pc--title-main {
+      color: #0ca678;
+      font-weight: 500; }
+.practice__pc--information .practice__pc--title .practice__pc--title-sub {
+      margin-top: 0.3rem;
+      color: #087f5b;
+      font-size: 1.6rem;
+      font-weight: 500; }
+.practice__pc--information .practice__pc--progress {
+    color: #212529; }
+.practice__pc--information .practice__pc--progress-level {
+      margin: 2rem auto 0;
+      text-align: center;
+      font-size: 2.5rem;
+      color: #212529;
+      font-family: "DM Serif Text"; }
+.practice__pc--information .practice__pc--progress .tempo-number {
+      margin: 3rem auto 2rem;
+      background-color: #f8f9fa;
+      font-family: "Lora";
+      height: 20rem;
+      width: 20rem;
+      font-size: 10rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%; }
+.practice__pc--information .practice__pc--progress .tempo-number .bpm {
+        font-size: 1.2rem;
+        font-weight: 900;
+        letter-spacing: 0.1rem; }
+.practice__pc--information .practice__pc--progress-tempo {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #495057; }
+.practice .next-level-form {
+    text-align: center;
+    background-color: #fff;
+    max-width: 90%;
+    max-height: 6rem;
+    border-radius: 5px;
+    margin: 0 auto;
+    font-family: "Lora";
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; }
+.practice .next-level-form .input__checkbox--repetition:after {
+      content: "";
+      background-color: red; }
+.practice .next-level-form #btn__next-level {
+      cursor: pointer;
+      border: none;
+      border-radius: 20px;
+      background-color: #e8590c;
+      color: #fff;
+      padding: 1rem 1rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      margin: 1rem 0 1rem 1rem; }
+.practice .next-level-form #btn__next-level:active {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 2px 3px rgba(0, 0, 0, 0.24);
+        transition: min-width 1s, background-color 0.05s;
+        background-color: #d9480f;
+        transform: translate(0%, 5%); }
+.practice__progress--history {
+  max-width: 70%;
+  margin: 2rem auto 0; }
+.practice__progress--history .practice__progress--history-unit {
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: content;
+    justify-content: space-between;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    padding: 1rem 1rem; }
+.practice__progress--history .practice__progress--history-unit .practice__progress--history-summary {
+      font-size: 1.4rem; }
+.practice__progress--history .practice__progress--history-unit .practice__progress--history-summary .level-number {
+        background-color: #ffe8cc;
+        height: 3rem;
+        width: 3rem;
+        font-size: 1.8rem;
+        display: inline-block;
+        border-radius: 50%;
+        text-align: center;
+        margin-right: 1rem; }
+.practice__progress--history .practice__progress--history-unit .practice__progress--history-date {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #868e96; }
+.repetition-label {
+  text-align: center; }
+.fab {
+  position: fixed;
+  cursor: pointer;
+  bottom: 10%;
+  right: 50%;
+  color: #f8f9fa;
+  background-color: #38d9a9;
+  border: none;
+  min-width: 4rem;
+  min-height: 4rem;
+  border-radius: 50%;
+  font-size: 3.3rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+.add-new-piece {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  padding: 0 1rem;
+  font-weight: 300;
+  content: "New Piece";
+  font-family: "Roboto", serif;
+  letter-spacing: 2px;
+  max-width: auto;
+  transform: translateX(50%); }
+.add-new-piece span {
+    font-size: 3rem;
+    font-family: "Lato";
+    margin: 0 1rem 0 0;
+    font-weight: 500; }
+.add-new-piece:active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 2px 3px rgba(0, 0, 0, 0.24);
+    transition: min-width 1s, background-color 0.05s;
+    background-color: #20c997;
+    transform: translate(50%, 5%); }
+
+/*# sourceMappingURL=index.971090c7.css.map */
